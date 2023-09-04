@@ -1,0 +1,20 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello!</h1>
+Welcome to online shop.
+<TelerikButton OnClick="@SayHello" ThemeColor="primary">Say Hello</TelerikButton>
+<p>@helloString</p>
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code {
+    private MarkupString helloString;
+
+    private void SayHello()
+    {
+        string msg = string.Format($"Hello from <strong>Telerik Blazor</strong> at {DateTime.Now}.<br />");
+        helloString = new MarkupString(msg);
+    }
+}
